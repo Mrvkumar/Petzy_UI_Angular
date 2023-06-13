@@ -54,6 +54,7 @@
                   href="#"
                   data-toggle="modal"
                   data-target="#deactivate_doctor"
+                  (click)="deactivateVets(vet.npiNo)"
                 >
                   <i class="fa-solid fa-circle-xmark"></i> Deactivate</a
                 >
@@ -67,7 +68,7 @@
                 >
               </div>
             </div>
-
+             
             <h4 class="doctor-name text-ellipsis">
               <a  class="doctorname" [routerLink]="['/vetInfo/{{vet.npiNo}}/{{vet.userName}}']">
                 Dr. {{ vet.firstName }} {{ vet.lastName }}

@@ -20,6 +20,7 @@ export class DoctorsComponent implements OnInit {
   Show: boolean = false;
   visible: boolean = false;
   msg: any;
+  router: any;
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -68,6 +69,7 @@ export class DoctorsComponent implements OnInit {
     if (vetDeactivate) {
       let VetDetails = this.vetService.deactivateVets(id);
       VetDetails.subscribe((data) => (this.msg = data));
+      this.router.navigate(['/vets']);
       console.log(VetDetails);
       alert('Successfully deactivated the vet');
     } else {
